@@ -5,9 +5,7 @@ const pool = new Pool({
   connectionString: process.env.POSTGRES_URL + "?sslmode=require",
 })
 
-const path = require('path');
-const filePath = path.resolve(__dirname, './mybatisMapper.xml');
-MybatisMapper.createMapper([filePath]);
+MybatisMapper.createMapper(['/xml/mybatisMapper.xml']);
 
 export default async function handler(req, res) {
     try {
