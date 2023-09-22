@@ -3,6 +3,7 @@ import { TextField } from '@mui/material';
 import MultiColumnDropdownTextField from '../../components/muidropdown';
 
 export default function DropDownText() {
+  const path = require('path');  
   const [fields, setFields] = useState([
     { anchorEl: null, selectedNames: ["Happy Kim"], selectedIds: ["user02"] },
     { anchorEl: null, selectedNames: ["Anold Park, Han na Oh"], selectedIds: ["user03, user05"] },
@@ -29,6 +30,7 @@ export default function DropDownText() {
 
   return (
     <div style={{ padding: "20px", width: "550px" }}>
+      {path}  
       {fields.map((field, index) => (
         <div key={index}>
           <TextField
