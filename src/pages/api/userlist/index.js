@@ -8,7 +8,7 @@ export default async function handler(req, res) {
     try {
       const connection = await pool.connect();
       //const sql = MybatisMapper.getStatement("namespace1", "user_list", param);
-      const { rows } = await connection.query('select user_id id,user_name as name,departmentfrom user_list');         
+      const { rows } = await connection.query('select user_id id,user_name as name,department from user_list');         
       connection.release();
       return res.send(rows);
     } catch (error) {
