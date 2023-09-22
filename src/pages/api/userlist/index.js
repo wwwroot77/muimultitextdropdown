@@ -6,7 +6,7 @@ const pool = new Pool({
 })
 
 const path = require('path');
-const filePath = path.join(__dirname, 'src/pages/api/mybatisMapper.xml');
+const filePath = path.resolve(__dirname, './mybatisMapper.xml');
 MybatisMapper.createMapper([filePath]);
 
 export default async function handler(req, res) {
