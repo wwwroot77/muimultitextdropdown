@@ -1,26 +1,14 @@
 import { Pool } from 'pg';
-import MybatisMapper from 'mybatis-mapper';
 
 const pool = new Pool({
   connectionString: process.env.POSTGRES_URL + "?sslmode=require",
 })
 
-const path = require('path');
-const filePath = path.resolve(__dirname, 'tmp/mybatisMapper.xml');
-console.log("Current directory:", __dirname);
-console.log("File path:", filePath);
-MybatisMapper.createMapper([filePath]);
-
 export default async function handler(req, res) {
     try {
       const connection = await pool.connect();
-      const username = "bescon";
-      var param = {
-        user_id : username
-      }
-      console.log("username" + username);
-      const sql = MybatisMapper.getStatement("namespace1", "user_list", param);
-      const { rows } = await connection.query(sql);         
+      //const sql = MybatisMapper.getStatement("namespace1", "user_list", param);
+      const { rows } = await connection.query('select user_id id,user_name as name,departmentfrom user_list');         
       connection.release();
       return res.send(rows);
     } catch (error) {
