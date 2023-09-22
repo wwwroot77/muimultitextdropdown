@@ -2,13 +2,8 @@ import { Pool } from 'pg';
 import MybatisMapper from 'mybatis-mapper';
 
 const pool = new Pool({
-    connectionString: "postgres://default:wjDaO1Gd0BhP@ep-holy-recipe-99329247-pooler.us-east-1.postgres.vercel-storage.com:5432/verceldb" + "?sslmode=require"
-    //user: 'postgres',
-    //host: '100.100.100.100',
-    //database: 'db',
-    //password: '1234',
-    //port: 5432,
-});
+  connectionString: process.env.POSTGRES_URL + "?sslmode=require",
+})
 
 MybatisMapper.createMapper(['src/pages/api/mybatisMapper.xml']);
 
