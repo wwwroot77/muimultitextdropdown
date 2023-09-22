@@ -7,6 +7,8 @@ const pool = new Pool({
 
 const path = require('path');
 const filePath = path.resolve(__dirname, 'tmp/mybatisMapper.xml');
+console.log("Current directory:", __dirname);
+console.log("File path:", filePath);
 MybatisMapper.createMapper([filePath]);
 
 export default async function handler(req, res) {
