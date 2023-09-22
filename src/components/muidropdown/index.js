@@ -66,7 +66,7 @@ export default function MultiColumnDropdownTextField({ onChange, anchorEl, onClo
             newIds.push(item.id);
         }
 
-        // 외부로 이름과 모든 선택된 항목들의 ID 값을 함께 전달
+        
         onChange && onChange({ names: newNames.join(', '), ids: newIds.join(', ') });
         setSelectedIds(newIds);
         return newNames;
@@ -85,11 +85,11 @@ export default function MultiColumnDropdownTextField({ onChange, anchorEl, onClo
   const handleSelectAllClick = () => {
     if (selectAll) {
       setSelectedNames([]);
-      onChange && onChange([]); // 외부로 전달
+      onChange && onChange([]);
     } else {
       const newNames = filteredItems.map(item => item.name);
       setSelectedNames(newNames);
-      onChange && onChange(newNames.join(', ')); // 외부로 전달
+      onChange && onChange(newNames.join(', '));
     }
   };
 
@@ -159,7 +159,7 @@ export default function MultiColumnDropdownTextField({ onChange, anchorEl, onClo
                 } 
                 sx={{ justifyContent: 'flex-start' }}
               >
-                성명
+                Name
               </Button>
             </Grid>
             <Grid item xs={4} onClick={() => handleSortClick('department')}>
@@ -171,7 +171,7 @@ export default function MultiColumnDropdownTextField({ onChange, anchorEl, onClo
                 } 
                 sx={{ justifyContent: 'flex-start' }}
               >
-                부서
+                Department
               </Button>
             </Grid>
           </Grid>

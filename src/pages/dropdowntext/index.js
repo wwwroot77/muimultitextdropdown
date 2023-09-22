@@ -4,8 +4,8 @@ import MultiColumnDropdownTextField from '../../components/muidropdown';
 
 export default function DropDownText() {
   const [fields, setFields] = useState([
-    { anchorEl: null, selectedNames: ["강도야"], selectedIds: ["doyakang"] },
-    { anchorEl: null, selectedNames: ["홍길동, 베스콘, 최우주"], selectedIds: ["kdhong, bescon, woojuchoi"] },
+    { anchorEl: null, selectedNames: ["Happy Kim"], selectedIds: ["user02"] },
+    { anchorEl: null, selectedNames: ["Anold Park, Han na Oh"], selectedIds: ["user03, user05"] },
   ]);
 
   const handleTextboxClick = (event, index) => {
