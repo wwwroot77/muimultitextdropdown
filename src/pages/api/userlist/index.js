@@ -5,7 +5,20 @@ const pool = new Pool({
   connectionString: process.env.POSTGRES_URL + "?sslmode=require",
 })
 
-MybatisMapper.createMapper(['/xml/mybatisMapper.xml']);
+const mybatisXML = `
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="namespace1">
+  <select id="user_list">
+    select user_id id,
+           user_name as name,
+           department
+    from user_list
+  </select>
+</mapper>
+`;
+
+MybatisMapper.createMapperFromString(mybatisXML);
 
 export default async function handler(req, res) {
     try {
