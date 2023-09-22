@@ -1,0 +1,3 @@
+{
+    "includeFiles": ["tmp/mybatisMapper.xml"]
+}
