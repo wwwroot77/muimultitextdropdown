@@ -10,6 +10,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 modify .env 
 NEXT_PUBLIC_HOME_URL ==> user URL
 
+and change Database connection 
+
 ## Getting Started
 
 First, run the development server:
